@@ -6,7 +6,6 @@ import java.util.Map;
 
 import net.minidev.json.parser.ContainerFactory;
 import net.minidev.json.parser.JSONParser;
-import net.minidev.json.parser.ParseException;
 
 
 /**
@@ -195,8 +194,9 @@ public class JSONRPC2Parser {
 			else
 				json = parser.parse(jsonString);
 				
-		} catch (ParseException e) {
-
+		} catch (Exception e) {
+			// ParseException, NumberFormatException, NullPointerException
+			
 			// Terse message, do not include full parse exception message
 			throw new JSONRPC2ParseException("Invalid JSON", 
 				                         JSONRPC2ParseException.JSON, 

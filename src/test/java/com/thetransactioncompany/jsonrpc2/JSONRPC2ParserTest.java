@@ -44,4 +44,17 @@ public class JSONRPC2ParserTest extends TestCase {
 		assertEquals(2, request.getPositionalParams().size());
 		assertEquals(1l, request.getID());
 	}
+
+
+	public void testParseCatchesNumberFormatException() {
+
+		String json = "{\"jsonrpc\": \"2.0\", \"method\": \"subtract\", \"params\": [2e+], \"id\": 1}   ";
+
+		try {
+			new JSONRPC2Parser().parseJSONRPC2Request(json);
+			fail();
+		} catch (JSONRPC2ParseException e) {
+			assertEquals("Invalid JSON", e.getMessage());
+		}
+	}
 }
