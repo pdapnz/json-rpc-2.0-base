@@ -1,6 +1,6 @@
 JSON-RPC 2.0 Base
 
-Copyright (c) Vladimir Dzhuvinov, 2009 - 2015
+Copyright (c) Vladimir Dzhuvinov, 2009 - 2021
 
 
 README
@@ -11,7 +11,7 @@ notifications and responses.
 
 Requirements:
 
-    * Java 1.5 or later
+    * Java 1.6 or later
 
     * The package depends on the JSON Smart library for JSON encoding and
       decoding (fork of the popular JSON.simple toolkit, but with more
